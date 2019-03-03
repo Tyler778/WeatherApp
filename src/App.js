@@ -39,6 +39,7 @@ export default class App extends Component {
         description: data.weather[0].description,
         error: "",
       })
+    //Error if no form entry  
     } else {
       this.setState({
         error: "Please enter the values",
@@ -49,8 +50,11 @@ export default class App extends Component {
     return (
       <div>
         <Title />
-        <Form getWeather={this.getWeather} />
-        <Weather 
+        <Form 
+        //Passing Method to Form.js
+        getWeather={this.getWeather} />
+        <Weather
+        //Passing fetched data to weather.js 
         temperature={this.state.temperature}
         city={this.state.city}
         country={this.state.country}
